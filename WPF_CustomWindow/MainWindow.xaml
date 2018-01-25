@@ -1,0 +1,9 @@
+﻿<controls:UserWindow x:Class="WPF_CustomWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WPF_CustomWindow.Controls"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        
+    </Grid>
+</controls:UserWindow>

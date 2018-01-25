@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="NoBgButtonBaseStyleKey" 
+           TargetType="{x:Type ButtonBase}">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border CornerRadius="0" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="#00000000">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            </ContentPresenter>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="#FF808080"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Titlebar Button-->
+    <Style x:Key="TitlebarButtonStyleKey" 
+           BasedOn="{StaticResource NoBgButtonBaseStyleKey}" 
+           TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="#FFC1C1C1"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FFDDDDDD"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Close Button [ Fg:White ]-->
+    <Style x:Key="TitlebarCloseBtnStyleKey" 
+           BasedOn="{StaticResource NoBgButtonBaseStyleKey}"  
+           TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="#FFDC0505"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FFC30404"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>
